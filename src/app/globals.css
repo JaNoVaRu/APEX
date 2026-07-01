@@ -103,6 +103,131 @@ h2.section-title {
   margin: 0 0 14px;
   border-bottom: 1px solid var(--rule);
   padding-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+h4.division-head {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--ink-faint);
+  margin: 22px 0 8px;
+  border-bottom: 1px dashed var(--rule);
+  padding-bottom: 4px;
+}
+
+h4.division-head:first-child {
+  margin-top: 0;
+}
+
+.taccount {
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: var(--paper-card);
+}
+
+.taccount-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--rule-strong);
+  gap: 10px;
+}
+
+.taccount-head h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.taccount-head .pct {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.resources {
+  padding: 10px 14px;
+  border-top: 1px solid var(--rule);
+  font-size: 12px;
+}
+
+.resources .rlabel {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-size: 10px;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+
+.rchip {
+  display: inline-block;
+  border: 1px solid var(--rule-strong);
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin: 2px 4px 2px 0;
+  font-size: 12px;
+}
+
+.news-item {
+  border-bottom: 1px solid var(--rule);
+  padding: 12px 0;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--haber);
+  border: 1px solid var(--haber);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+.news-title {
+  font-weight: bold;
+  margin: 6px 0 3px;
+}
+
+.news-date {
+  font-size: 11px;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+}
+
+.quiz-q {
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.quiz-opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  font-size: 13px;
 }
 
 .status-line {

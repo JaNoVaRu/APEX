@@ -149,3 +149,13 @@ grant select on public.quiz_questions_public to anon, authenticated;
 -- Nota: para producción, la escritura sobre subjects/topics/quiz_questions/news debería
 -- restringirse a un rol de administrador (por ejemplo, profiles.is_owner = true), no
 -- quedar abierta. Agrega esa política antes de dar acceso de administración a nadie más.
+
+-- ============ Restringir qué columnas de profiles puede tocar el usuario ============
+-- La política "profiles: editar el propio" solo filtra FILAS (auth.uid() = id), no
+-- COLUMNAS: sin este REVOKE/GRANT, cualquier usuario autenticado podría hacer
+-- `update profiles set is_owner = true` (o plan = 'premium') sobre su propia fila
+-- y auto-promoverse. Solo "name" debe ser editable por el usuario; is_owner, plan
+-- y stripe_customer_id los escribe el backend (webhook de Stripe / función de
+-- servidor con la service key), nunca el cliente.
+revoke update on public.profiles from authenticated;
+grant update (name) on public.profiles to authenticated;

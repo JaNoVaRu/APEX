@@ -57,6 +57,9 @@ export async function Masthead() {
       </header>
       <nav className="tabs wrap">
         <Link href="/">Panel</Link>
+        <Link href="/materias">Materias</Link>
+        <Link href="/practica">Práctica</Link>
+        <Link href="/noticias">Noticias</Link>
         <Link href="/cuenta">Cuenta</Link>
         {user && (
           <form action={signOutAction}>
