@@ -1,0 +1,120 @@
+:root {
+  --paper: #eef3e7;
+  --paper-card: #f7faf3;
+  --rule: #b9cbae;
+  --rule-strong: #8faa80;
+  --ink: #20301f;
+  --ink-soft: #4c5d46;
+  --ink-faint: #7c8b76;
+  --debe: #a7382c;
+  --debe-soft: #f1dad5;
+  --haber: #1f5c4c;
+  --haber-soft: #d9eae2;
+  --gold: #a97c25;
+  --gold-soft: #f3e7cb;
+  --radius: 10px;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif;
+  --font-mono: "Courier New", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  background-image: linear-gradient(var(--rule) 1px, transparent 1px);
+  background-size: 100% 34px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+header.masthead {
+  padding: 34px 20px 18px;
+  border-bottom: 3px double var(--rule-strong);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.masthead h1 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  margin: 0 0 4px;
+}
+
+.masthead p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.seal {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: bold;
+  font-size: 11px;
+  color: var(--gold);
+  text-align: center;
+  line-height: 1.15;
+  flex-shrink: 0;
+  background: var(--paper-card);
+}
+
+.card {
+  background: var(--paper-card);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin: 20px 0;
+}
+
+h2.section-title {
+  font-family: var(--font-display);
+  font-size: 19px;
+  margin: 0 0 14px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+
+.status-line {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 0;
+}
+
+.status-ok {
+  color: var(--haber);
+}
+
+.status-err {
+  color: var(--debe);
+}
