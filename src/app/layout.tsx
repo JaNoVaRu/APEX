@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Masthead } from "@/components/Masthead";
 
 export const metadata: Metadata = {
   title: "Libro Mayor — Estudio para Contadores",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body>
+        <Masthead />
+        {children}
+      </body>
     </html>
   );
 }

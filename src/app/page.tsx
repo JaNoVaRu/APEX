@@ -6,9 +6,11 @@ export default async function Home() {
 
   try {
     const supabase = await createClient();
-    const { error } = await supabase.auth.getSession();
+    const { count, error } = await supabase
+      .from("subjects")
+      .select("id", { count: "exact", head: true });
     if (error) throw error;
-    detail = "El cliente de Supabase respondió correctamente.";
+    detail = `Lectura de "subjects" vía RLS pública funcionando (${count ?? 0} materias en el catálogo).`;
   } catch (err) {
     status = "error";
     detail = err instanceof Error ? err.message : "Error desconocido.";
@@ -16,25 +18,12 @@ export default async function Home() {
 
   return (
     <div className="wrap">
-      <header className="masthead">
-        <div>
-          <h1>Libro Mayor — Estudio para Contadores</h1>
-          <p>Aprendizaje guiado para estudiantes y profesionales de Contaduría</p>
+      <div className="card">
+        <h2 className="section-title">Estado de la conexión</h2>
+        <div className={`status-line ${status === "ok" ? "status-ok" : "status-err"}`}>
+          {status === "ok" ? "✓ Conectado a Supabase" : "✗ No se pudo conectar a Supabase"}
         </div>
-        <div className="seal">
-          LIBRO
-          <br />
-          MAYOR
-        </div>
-      </header>
-      <div className="wrap">
-        <div className="card">
-          <h2 className="section-title">Estado de la conexión</h2>
-          <div className={`status-line ${status === "ok" ? "status-ok" : "status-err"}`}>
-            {status === "ok" ? "✓ Conectado a Supabase" : "✗ No se pudo conectar a Supabase"}
-          </div>
-          <div className="status-line">{detail}</div>
-        </div>
+        <div className="status-line">{detail}</div>
       </div>
     </div>
   );

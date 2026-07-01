@@ -118,3 +118,124 @@ h2.section-title {
 .status-err {
   color: var(--debe);
 }
+
+nav.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0 24px;
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav.tabs a {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+nav.tabs a:hover {
+  color: var(--ink);
+}
+
+.plan-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.plan-badge.free {
+  background: var(--paper);
+  border: 1px solid var(--rule-strong);
+  color: var(--ink-soft);
+}
+
+.plan-badge.premium {
+  background: var(--gold-soft);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-row label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  min-width: 110px;
+}
+
+select,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  font-family: var(--font-body);
+  font-size: 13px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 6px;
+  padding: 7px 10px;
+  background: var(--paper-card);
+  color: var(--ink);
+  flex: 1;
+  min-width: 200px;
+}
+
+button.btn {
+  font-family: var(--font-display);
+  font-size: 13px;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  padding: 7px 14px;
+  background: var(--ink);
+  color: var(--paper-card);
+  cursor: pointer;
+}
+
+button.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+}
+
+button.btn.small {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+button.btn.gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+.note {
+  border-left: 3px solid var(--gold);
+  background: var(--gold-soft);
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 0 6px 6px 0;
+  margin-top: 10px;
+  color: var(--ink-soft);
+}
+
+.note.note-error {
+  border-left-color: var(--debe);
+  background: var(--debe-soft);
+}
+
+.muted {
+  color: var(--ink-faint);
+  font-size: 12px;
+}
